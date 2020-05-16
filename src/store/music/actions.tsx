@@ -55,25 +55,24 @@ export const nextMusic = (index: number) =>
     index,
   } as const);
 
-  // export const getTrending = (offset: number = 0) => {
-  //   return async (dispatch: Dispatch<AppActions>, getState: () => AppState) => {
-  //     const data = await axios.get(
-  //       `https://api.napster.com/v2.2/tracks/top?limit=20&offset=${offset * 20}`
-  //     );
-  //     let newData: Musics = [];
-  //     data.data.tracks.forEach(async (music: any) => {
-  //       newData.push({
-  //         id: music.id,
-  //         by: music.artistName,
-  //         name: music.name,
-  //         seconds: music.playbackSeconds,
-  //         imageUrl: `https://api.napster.com/imageserver/v2/albums/${music.albumId}/images/300x300.png`,
-  //       });
-  //     });
-  //     dispatch(trending(newData));
-  //   };
-  // };
-
+// export const getTrending = (offset: number = 0) => {
+//   return async (dispatch: Dispatch<AppActions>, getState: () => AppState) => {
+//     const data = await axios.get(
+//       `https://api.napster.com/v2.2/tracks/top?limit=20&offset=${offset * 20}`
+//     );
+//     let newData: Musics = [];
+//     data.data.tracks.forEach(async (music: any) => {
+//       newData.push({
+//         id: music.id,
+//         by: music.artistName,
+//         name: music.name,
+//         seconds: music.playbackSeconds,
+//         imageUrl: `https://api.napster.com/imageserver/v2/albums/${music.albumId}/images/300x300.png`,
+//       });
+//     });
+//     dispatch(trending(newData));
+//   };
+// };
 
 export const startSetPlaylist = () => {
   return (dispatch: any, getState: () => AppState) => {

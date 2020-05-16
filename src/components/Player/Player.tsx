@@ -75,6 +75,7 @@ const Player: React.FC<PlayerProps> = ({
     if (width > 1100 && !video && !!node1.current) {
       if (loaded) {
         if (!!node1.current) {
+          node1.current.classList.remove("rotating");
           node1.current.classList.add("animated");
           node1.current.classList.add("fadeIn");
         }

@@ -9,21 +9,21 @@ export const CardListColumn = () => {
       backgroundColor="#222831"
       foregroundColor="#1b1f26"
     >
-      <rect x="10vw" y="0" rx="20px" ry="20px" width="17vh" height="17vh" />
-      {/* <rect x="10vw" y="18vh" rx="0" ry="0" width="17vh" height="25px" />
-      <rect x="10vw" y="22vh" rx="0" ry="0" width="17vh" height="17px" /> */}
+      <rect x="10vw" y="0" rx="20px" ry="20px" width="31vw" height="17vh" />
+      {/* <rect x="10vw" y="18vh" rx="0" ry="0" width="31vw" height="25px" />
+      <rect x="10vw" y="22vh" rx="0" ry="0" width="31vw" height="17px" /> */}
 
-      <rect x="60vw" y="0" rx="20px" ry="20px" width="17vh" height="17vh" />
-      {/* <rect x="60vw" y="18vh" rx="0" ry="0" width="17vh" height="25px" />
-      <rect x="60vw" y="22vh" rx="0" ry="0" width="17vh" height="17px" /> */}
+      <rect x="60vw" y="0" rx="20px" ry="20px" width="31vw" height="17vh" />
+      {/* <rect x="60vw" y="18vh" rx="0" ry="0" width="31vw" height="25px" />
+      <rect x="60vw" y="22vh" rx="0" ry="0" width="31vw" height="17px" /> */}
 
-      <rect x="10vw" y="31vh" rx="20px" ry="20px" width="17vh" height="17vh" />
-      {/* <rect x="10vw" y="49vh" rx="0" ry="0" width="17vh" height="25px" />
-      <rect x="10vw" y="53vh" rx="0" ry="0" width="17vh" height="17px" /> */}
+      <rect x="10vw" y="32vh" rx="20px" ry="20px" width="31vw" height="17vh" />
+      {/* <rect x="10vw" y="49vh" rx="0" ry="0" width="31vw" height="25px" />
+      <rect x="10vw" y="53vh" rx="0" ry="0" width="31vw" height="17px" /> */}
 
-      <rect x="60vw" y="31vh" rx="20px" ry="20px" width="17vh" height="17vh" />
-      {/* <rect x="60vw" y="49vh" rx="0" ry="0" width="17vh" height="25px" />
-      <rect x="60vw" y="53vh" rx="0" ry="0" width="17vh" height="17px" /> */}
+      <rect x="60vw" y="32vh" rx="20px" ry="20px" width="31vw" height="17vh" />
+      {/* <rect x="60vw" y="49vh" rx="0" ry="0" width="31vw" height="25px" />
+      <rect x="60vw" y="53vh" rx="0" ry="0" width="31vw" height="17px" /> */}
     </ContentLoader>
   );
 };
