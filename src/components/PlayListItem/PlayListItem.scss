@@ -1,0 +1,89 @@
+@import "../../global/mixins";
+@import "../../global/variables";
+@import "../../global/media";
+
+.PlayListItem {
+  overflow: hidden;
+  cursor: pointer;
+  display: grid;
+  background-color: $bg;
+  grid-template-columns: 0.9fr 2.1fr 0.5fr 1fr;
+  align-items: center;
+  text-transform: capitalize;
+  height: 3rem;
+  width: 100%;
+  box-shadow: 3px 4px 10px -8px black;
+  border-radius: 5px;
+  @include media(">tablet") {
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr;
+    width: 38vw;
+    height: 6.5vh;
+  }
+  & button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  & p {
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: white;
+    font-size: 0.8rem;
+    @include media(">tablet") {
+      font-size: 1.6vh;
+    }
+  }
+}
+
+.PlayListItem + .PlayListItem {
+  margin-top: 1rem;
+  @include media(">tablet") {
+    margin-top: 2vh;
+  }
+}
+.PlayListItem__first {
+  & img {
+    height: 32px;
+    border-radius: 100%;
+    @include media(">tablet") {
+      height: 4.8vh;
+    }
+  }
+  justify-self: center;
+  display: flex;
+}
+
+.PlayListItem__second {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1vw;
+}
+
+.PlayListItem__second2 {
+  justify-self: center;
+  padding-right: 2vw;
+}
+//
+
+//
+
+.PlayListItem__third {
+  justify-self: center;
+}
+
+.background {
+  background-image: linear-gradient(#faca9c, #e5a267);
+  & p {
+    font-weight: 400;
+    color: $bg;
+  }
+  .PlayListItem__third {
+    height: fit-content;
+    svg {
+      rect {
+        fill: $bg;
+      }
+    }
+  }
+}

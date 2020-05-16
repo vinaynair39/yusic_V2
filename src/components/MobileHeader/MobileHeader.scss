@@ -1,0 +1,23 @@
+@import "../../global/variables";
+@import "../../global/mixins";
+
+.MobileHeader {
+  background-color: $bg;
+  height: 7.4vh;
+  height: calc(var(--vh, 1vh) * 7.4);
+  position: relative;
+  z-index: 9;
+  @include flexCenter(row);
+  //   .MobileHeader__logo {
+  //     margin-right: auto;
+  //   }}
+  .MobileHeader__logout {
+    position: absolute;
+    right: 0;
+    padding-right: 30px;
+    transition: all 0.3s ease-in-out;
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+}

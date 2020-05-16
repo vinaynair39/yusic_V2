@@ -1,0 +1,18 @@
+@import "../../global/media";
+
+.VideosPage {
+  @include media(">tablet") {
+    display: grid;
+    grid-template-rows: 8vh 50vh 42vh;
+    width: 71vw;
+  }
+}
+
+.VideoPage__playlist {
+  @include media(">tablet") {
+    display: flex;
+    justify-content: center;
+    width: 92%;
+    margin-top: 4vh;
+  }
+}

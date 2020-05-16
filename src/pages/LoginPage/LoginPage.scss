@@ -1,0 +1,139 @@
+@import "../../global/variables";
+@import "../../global/mixins";
+@import "../../global/media";
+
+.LoginPage {
+  display: flex;
+  height: calc(var(--vh, 1vh) * 100);
+  max-height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background-color: $bg-dark;
+  .LoginPage__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    @include media("<tablet") {
+      width: 100vw;
+    }
+    text-align: center;
+    padding-bottom: 5vh;
+    .first-circles {
+      position: absolute;
+      @include media(">tablet") {
+        left: 0;
+        top: 1.5vh;
+      }
+      @include media("<tablet") {
+        top: 0;
+        right: 0;
+      }
+    }
+    .second-circles {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      svg {
+      }
+      @include media("<tablet") {
+        svg {
+          ellipse {
+            height: 92px;
+          }
+        }
+      }
+    }
+    .LoginPage__content-title {
+      svg {
+        @include media("<tablet") {
+          height: 10vh;
+          width: 70vw;
+          margin-bottom: 2vh;
+        }
+        height: 25vh;
+        width: 35vw;
+      }
+    }
+    .LoginPage__content-subtitle {
+      font-size: 4.5vh;
+      width: 40%;
+      font-family: Poppins, sans-serif;
+      letter-spacing: 3px;
+      font-weight: 300;
+      margin-bottom: 10vh;
+      padding: 0 1rem;
+      @include media("<tablet") {
+        width: 80%;
+        font-size: 2.5vh;
+        margin-bottom: 12vh;
+        font-weight: 400;
+      }
+    }
+    .LoginPage__content-button {
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      font-size: 4vh;
+      font-family: Poppins, sans-serif;
+      line-height: 144.5%;
+      position: relative;
+      left: 1vw;
+      top: -5vh;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      @include media("<tablet") {
+        font-weight: 300;
+        font-size: 3vh;
+        top: -7vh;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+      &:hover {
+        transform: scale(1.05);
+      }
+      svg {
+        // height: 270px;
+        position: relative;
+        left: -1vw;
+        height: 5vh;
+        width: 5vw;
+        @include media("<tablet") {
+          width: 25px;
+          height: 3.5vh;
+          left: 0vw;
+          margin-left: 5px;
+        }
+      }
+    }
+    .LoginPage__image {
+      display: none;
+      @include media(">tablet") {
+        display: block;
+      }
+      .LoginPage_bg {
+        svg {
+          height: 100vh;
+          width: 89vh;
+          position: absolute;
+          top: 0;
+          right: 0;
+          path: {
+            width: 89vh;
+            width: 34.8rem;
+          }
+        }
+      }
+      img {
+        height: 100vh;
+        position: absolute;
+        right: 6vw;
+        top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+@import "../../global/mixins";
+@import "../../global/variables";
+@import "../../global/media";
+
+.SideBar {
+  @include flexBetween(column);
+  min-height: 100vh;
+  height: 100%;
+  background-color: $bg;
+  width: 15vw;
+}
+
+.SideBar__profile {
+  margin-top: 3vh;
+  @include flexCenter(column);
+  & img {
+    height: 10vh;
+    border-radius: 50%;
+    filter: drop-shadow(0 2px 1px $bg-dark);
+    margin-bottom: 1.5vh;
+  }
+}
+
+.SideBar__profile-info {
+  text-align: center;
+  & h1 {
+    font-size: 1rem;
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+    letter-spacing: 5px;
+  }
+  p {
+    font-weight: 300;
+    color: rgba(white, 0.4);
+    font-size: 0.8vw;
+    letter-spacing: 2px;
+  }
+}
+
+.SideBar__main {
+  cursor: pointer;
+  height: 50vh;
+  width: 8vw;
+}
+
+.SideBar__main-child {
+  display: flex;
+  align-items: center;
+  text-align: start;
+
+  svg {
+    width: 2.5vw;
+    margin-right: 1vw;
+  }
+  a {
+    position: relative;
+    color: white;
+    font-size: 2.4vh;
+    font-weight: 300;
+    letter-spacing: 2px;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      transform: scaleX(0);
+      background-image: linear-gradient($color1, $color2);
+      transition: transform 0.3s;
+    }
+    &:hover {
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+  a:hover {
+    transform: scale(1);
+  }
+  margin-bottom: 3vh;
+}
+
+.SideBar__others {
+  text-align: center;
+  margin-top: 4vh;
+  & h1 {
+    font-weight: lighter;
+    font-size: 2.5vh;
+    margin-bottom: 4vh;
+  }
+}
+
+.SideBar__author {
+  svg {
+    width: 9vw;
+  }
+  margin-bottom: 4vh;
+}
+.SideBar__highlight {
+  padding-bottom: 0.2vh;
+  color: $color2;
+  border-bottom: 2px solid $color2;
+  border-radius: 1px;
+}
+
+.SideBar__highlight2 {
+  // a {
+  //   font-weight: 400;
+  //   color: $color1;
+  // }
+}

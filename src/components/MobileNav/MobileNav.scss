@@ -1,0 +1,43 @@
+@import "../../global/mixins";
+@import "../../global/variables";
+@import "../../global/media";
+
+.MobileNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 7.4vh;
+  height: calc(var(--vh, 1vh) * 7.4);
+  min-width: 85%;
+  padding: 0 30px;
+  z-index: 10;
+  background-color: $bg;
+  @include media(">tablet") {
+    display: none;
+  }
+  .wrapper {
+    height: 100%;
+    @include flexBetween(row);
+    a {
+      svg {
+        height: calc(var(--vh, 1vh) * 3);
+        path {
+          fill: rgba(white, 0.3);
+        }
+      }
+    }
+    a:first-child {
+      svg {
+        height: calc(var(--vh, 1vh) * 3.5);
+      }
+    }
+    .active {
+      svg {
+        path {
+          fill: $color2;
+        }
+      }
+    }
+  }
+}

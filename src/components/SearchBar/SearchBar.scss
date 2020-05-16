@@ -1,0 +1,73 @@
+@import "../../global/mixins";
+@import "../../global/variables";
+@import "../../global/media";
+
+.SearchBar {
+  display: flex;
+
+  input {
+    width: 100%;
+    @include media(">tablet") {
+      border-radius: 5px;
+      padding: 0 1.5vw;
+      height: 4vh;
+      width: 20vw;
+      text-align: start;
+      font-size: 2.1vh;
+      letter-spacing: 4px;
+    }
+    height: 3rem;
+    text-align: center;
+    color: white;
+    letter-spacing: 4px;
+    font-family: Poppins;
+    font-size: 1.2rem;
+    font-weight: 100;
+    background-color: rgba(white, 0.08);
+    border: none;
+    color: white;
+    padding: 0 10vw;
+    display: flex;
+    align-items: center;
+    &::placeholder {
+      text-align: center;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 100;
+      opacity: 0.4;
+      @include media(">tablet") {
+        text-align: start;
+        font-size: 2.1vh;
+      }
+    }
+
+    &:focus {
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+}
+
+.SearchBar__load {
+  padding: 20px 0;
+  position: absolute;
+  bottom: 13vh;
+  bottom: calc(var(--vh, 1vh) * 10);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.SearchBar__image {
+  display: none;
+  @include media(">tablet") {
+    // display: block;
+    position: absolute;
+    svg {
+      height: 2.5vh;
+    }
+    top: 3.4vh;
+    left: 24.5vw;
+  }
+}

@@ -1,0 +1,19 @@
+.MyModal {
+}
+.MyModal__button {
+  display: flex;
+  position: fixed;
+  bottom: 3vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 5vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.MyModal__main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5vh;
+}

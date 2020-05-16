@@ -1,0 +1,349 @@
+@import "../../global/variables";
+@import "../../global/mixins";
+@import "../../global/media";
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  animation: rotating 8s linear infinite;
+}
+
+.display-none {
+  visibility: hidden;
+}
+
+.Player {
+  text-align: center;
+  @include flexCenter(column);
+
+  @include media(">tablet") {
+    min-width: 19vw;
+    width: 19vw;
+    background-image: linear-gradient($color1, $color2);
+    border-radius: 20px;
+    height: 48vh;
+    box-shadow: 3px 4px 10px -8px black;
+  }
+  img {
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    height: 70vw;
+    margin-top: 3vh;
+    @include media(">tablet") {
+      height: 20vh;
+      margin-top: 0;
+      margin-bottom: 2vh;
+      border-radius: 100%;
+      box-shadow: 3px 4px 10px -8px black;
+    }
+  }
+  .Player__video {
+    position: relative;
+    top: calc(var(--vh, 1vh) * -1);
+  }
+  .Player__title {
+    font-family: Poppins, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 5px;
+    padding-bottom: 0.4rem;
+    @include media(">tablet") {
+      color: $bg-dark;
+      font-weight: 400;
+      font-size: 2.2vh;
+      padding: 0;
+      padding: 0 1rem;
+    }
+  }
+  .Player__subtitle {
+    font-size: 1rem;
+    font-weight: 200;
+    letter-spacing: 5px;
+    @include media(">tablet") {
+      color: $bg-dark;
+      font-size: 18px;
+      font-size: 1.9vh;
+      font-weight: 300;
+      letter-spacing: 3px;
+      margin-bottom: 0.5vh;
+      padding: 0 1rem;
+    }
+  }
+  .Player__controls {
+    width: 90%;
+    display: flex;
+    @include media(">tablet") {
+      width: 70%;
+      & svg {
+        height: 5vh;
+        rect {
+          height: 5vh;
+        }
+      }
+    }
+    @include flexBetween(row);
+    padding-top: 3.5vh;
+  }
+
+  .Player__controls-click {
+    svg {
+      @include media(">tablet") {
+        height: 5vh;
+      }
+      width: 70%;
+      height: 6vh;
+    }
+  }
+
+  .Player__elapsed {
+    padding-top: 3.5vh;
+    width: 90%;
+    @include media(">tablet") {
+      width: 75%;
+      padding-top: 1.5vh;
+    }
+  }
+}
+
+.Player__controls-volume {
+  svg {
+    &:active {
+      transition: all 0.5s ease-in;
+      transform: scale(0.8);
+    }
+  }
+}
+
+.Player__controls2 {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 13vh;
+  right: 5.2vw;
+  .Player__controls-volume {
+    margin-bottom: 8vh;
+  }
+  .Player__controls-click {
+    margin-bottom: 8vh;
+  }
+  @include media(">tablet") {
+    & svg {
+      width: 3vw;
+      height: 3.5vw;
+      rect {
+        height: 5vh;
+      }
+    }
+  }
+}
+
+.VideoPlayer {
+  height: 50vh;
+}
+
+// the code for input range
+
+$track-color: #a4a5a8;
+// $track-color: rgba(white, 3);
+
+$thumb-color: #fff;
+
+$thumb-radius: 12px;
+$thumb-height: 12px;
+$thumb-width: 12px;
+$thumb-shadow-size: 0;
+$thumb-shadow-blur: 0;
+$thumb-shadow-color: #111;
+$thumb-border-width: 0;
+$thumb-border-color: #fff;
+
+$track-width: 100%;
+$track-height: 5px;
+$track-shadow-size: 0;
+$track-shadow-blur: 0;
+$track-shadow-color: #222;
+$track-border-width: 0;
+$track-border-color: #000;
+
+$track-radius: 5px;
+$contrast: 5%;
+
+@mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
+  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color,
+    0 0 $shadow-size lighten($shadow-color, 5%);
+}
+
+@mixin track {
+  cursor: pointer;
+  height: $track-height;
+  transition: all 0.2s ease;
+  width: $track-width;
+}
+
+@mixin thumb {
+  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+  background: $thumb-color;
+  border: $thumb-border-width solid $thumb-border-color;
+  border-radius: $thumb-radius;
+  cursor: pointer;
+  height: $thumb-height;
+  width: $thumb-width;
+}
+
+[type="range"] {
+  -webkit-appearance: none;
+  margin: $thumb-height / 2 0;
+  width: $track-width;
+  border-radius: 10px;
+  &:focus {
+    outline: 0;
+
+    &::-webkit-slider-runnable-track {
+      @include media(">tablet") {
+        background: #f1c7a2;
+      }
+    }
+
+    &::-ms-fill-lower {
+      background: $track-color;
+      @include media(">tablet") {
+        background: #f1c7a2;
+      }
+    }
+
+    &::-ms-fill-upper {
+      background: lighten($track-color, $contrast);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+
+    @include media(">tablet") {
+      background: #f1c7a2;
+    }
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb;
+    -webkit-appearance: none;
+    margin-top: ((-$track-border-width * 2 + $track-height) / 2) -
+      ($thumb-height / 2);
+  }
+
+  &::-moz-range-track {
+    @include track;
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    @include media(">tablet") {
+      background: #f1c7a2;
+    }
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+  }
+
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+
+  &::-ms-track {
+    @include track;
+    background: transparent;
+    border-color: transparent;
+    border-width: ($thumb-height / 2) 0;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    background: darken($track-color, $contrast);
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+  }
+
+  &::-ms-fill-upper {
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+  }
+
+  &::-ms-thumb {
+    @include thumb;
+    margin-top: 0;
+  }
+}
+
+.Player__elapsed2 {
+  width: 91.5%;
+  [type="range"] {
+    -webkit-appearance: none;
+    margin: $thumb-height / 2 0;
+    width: $track-width;
+    border-radius: 10px;
+    &:focus {
+      outline: 0;
+
+      &::-webkit-slider-runnable-track {
+        @include media(">tablet") {
+          background: white;
+        }
+      }
+
+      &::-ms-fill-lower {
+        background: $track-color;
+        @include media(">tablet") {
+          background: white;
+        }
+      }
+
+      &::-ms-fill-upper {
+        background: lighten($track-color, $contrast);
+      }
+    }
+
+    &::-webkit-slider-runnable-track {
+      @include track;
+      @include shadow(
+        $track-shadow-size,
+        $track-shadow-blur,
+        $track-shadow-color
+      );
+
+      @include media(">tablet") {
+        background: white;
+      }
+      background: $track-color;
+      border: $track-border-width solid $track-border-color;
+
+      border-radius: $track-radius;
+    }
+  }
+}

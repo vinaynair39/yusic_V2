@@ -1,0 +1,55 @@
+@import "../../global/mixins";
+@import "../../global/variables";
+@import "../../global/media";
+
+.PlayList {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: $bg-dark;
+  @include media(">tablet") {
+    height: 100%;
+    justify-content: flex-start;
+    margin: 0;
+    align-items: center;
+  }
+  & h1 {
+    font-family: Lato, sans-serif;
+    letter-spacing: 5px;
+    font-weight: 300;
+    text-align: center;
+    display: none;
+    font-size: 4vh;
+    @include media(">tablet") {
+      display: block;
+      margin-bottom: 1.8vh;
+      position: relative;
+      top: -1vh;
+    }
+  }
+  margin-bottom: 8vh;
+}
+
+.PlayList__text {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  width: 100%;
+  @include media(">tablet") {
+    height: 30vh;
+    width: 39vw;
+    margin-top: 2vh;
+  }
+  svg {
+    height: calc(var(--vh, 1vh) * 50);
+    width: 80vw;
+    @include media(">tablet") {
+      height: 30vh;
+      width: 30vw;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@import "../../global/mixins";
+@import "../../global/variables";
+@import "../../global/media";
+
+.CardList {
+  @include flexCenter(row);
+  flex-wrap: wrap;
+  padding-top: calc(var(--vh, 1vh) * 5);
+  position: relative;
+  height: calc(var(--vh, 1vh) * 70);
+  align-items: flex-start;
+  @include media(">tablet") {
+    flex-wrap: nowrap;
+    padding: 0;
+    height: fit-content;
+    align-items: flex-start;
+    position: static;
+    width: 71vw;
+    justify-content: space-between;
+  }
+
+  h1 {
+    display: none;
+    @include media(">tablet") {
+      position: absolute;
+      display: block;
+      font-weight: 200;
+      letter-spacing: 5px;
+      top: 10vw;
+      left: 14.5vw;
+      font-size: 1.8vw;
+      transform: rotateZ(270deg);
+    }
+  }
+  .CardList__change {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    @include media(">tablet") {
+      flex-direction: column;
+      height: 22vh;
+      width: 3vw;
+      align-items: flex-end;
+      position: relative;
+      // right: 1vw;
+    }
+    svg {
+      width: calc(var(--vh, 1vh) * 5);
+      height: calc(var(--vh, 1vh) * 4);
+      @include media(">tablet") {
+        height: 4.5vh;
+        width: 2vw;
+      }
+    }
+    button {
+      transition: all 0.3s ease-in-out;
+      &:active {
+        transform: scale(0.8);
+      }
+    }
+  }
+}
+
+.CardList2 {
+  flex-wrap: wrap;
+  width: 90%;
+  color: white;
+  align-items: flex-start;
+}

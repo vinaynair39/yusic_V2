@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;700;900&family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import "./global/variables";
+@import "./global/mixins";
+@import "./global/media";
+
+body {
+  font-family: lato, sans-serif;
+  background-color: $bg-dark;
+  color: white;
+  font-family: Lato, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: poppins, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.03);
+  }
+
+  &:active {
+    transition: all 0.1s ease-in-out;
+    transform: scale(0.93);
+  }
+}
+
+button {
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  &:active {
+    transition: all 0.3s ease-in-out;
+    transform: scale(0.93);
+  }
+}
+
+svg {
+  cursor: pointer;
+}
+
+.App {
+  min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  min-height: calc(var(--vh, 1vh) * 100);
+  height: 100%;
+  @include media(">tablet") {
+    max-height: 100vh;
+  }
+}
+.App__media {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.App__card-list {
+  align-self: start;
+}
+
+.App__header {
+  align-self: start;
+}

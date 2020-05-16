@@ -1,0 +1,14 @@
+@import "../../global/mixins";
+@import "../../global/variables";
+@import "../../global/media";
+
+.DesktopHeader {
+  @include flexBetween(row);
+  button {
+    background-color: rgba(white, 0.2);
+    color: rgba(white, 0.8);
+    border-radius: 5px;
+    padding: 0.6vh 0.6vw;
+    font-family: Poppins, sans-serif;
+  }
+}

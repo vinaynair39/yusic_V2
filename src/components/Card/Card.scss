@@ -1,0 +1,58 @@
+@import "../../global/mixins";
+@import "../../global/variables";
+@import "../../global/media";
+
+.Card {
+  @include flexCenter(column);
+  padding-bottom: calc(var(--vh, 1vh) * 5);
+  cursor: pointer;
+  @include media(">tablet") {
+    padding: 0;
+    width: 10.5vw;
+  }
+  width: 50vw;
+  text-align: center;
+  display: inline-block;
+
+  transition: all 0.5s ease;
+  &:active {
+    transform: scale(0.8);
+  }
+  img {
+    height: 17vh;
+    width: 31vw;
+    @include media(">tablet") {
+      height: 22vh;
+      width: 10.5vw;
+      margin-bottom: 2vh;
+    }
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    font-family: Poppins, sans-serif;
+    font-weight: 200;
+    letter-spacing: 5px;
+    font-size: 3.3vw;
+    padding: 0 5vw;
+    @include media(">tablet") {
+      font-weight: 300;
+      padding: 0;
+      font-size: 2vh;
+      letter-spacing: 4px;
+    }
+  }
+  span {
+    // padding-top: 0.1rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    color: rgba(white, 0.8);
+    font-size: 3vw;
+
+    @include media(">tablet") {
+      font-weight: 300;
+      padding-top: 0.2rem;
+      font-size: 1.6vh;
+    }
+  }
+}

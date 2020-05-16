@@ -1,0 +1,65 @@
+@import "../../global/mixins";
+@import "../../global/variables";
+@import "../../global/media";
+
+.PlayBox {
+  height: 6vh;
+  height: calc(var(--vh, 1vh) * 6);
+  display: grid;
+  position: fixed;
+  width: 100vw;
+  bottom: calc(var(--vh, 1vh) * 7.4);
+  background-color: rgba($bg, 0.4);
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  justify-content: center;
+
+  @include media(">tablet") {
+    display: none;
+  }
+
+  img {
+    justify-self: center;
+    height: 30px;
+    border-radius: 100%;
+  }
+  .PlayBox__name {
+    justify-self: center;
+    align-self: center;
+    color: white;
+    span {
+      background: linear-gradient(#ffce9f, #e5a267);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .PlayBox__buttons {
+    justify-self: center;
+    svg {
+      height: calc(var(--vh, 1vh) * 3.5);
+      path {
+        fill: rgba(white, 0.3);
+      }
+    }
+  }
+}
+.PlayBox__player {
+  background-color: $bg-dark;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--vh, 1vh) * 7.4);
+  right: 0;
+  left: 0;
+  height: 79.2vh;
+}
+
+.PlayBox__playlist {
+  background-color: $bg-dark;
+}

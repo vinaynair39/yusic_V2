@@ -1,0 +1,21 @@
+@import "../../global/mixins";
+@import "../../global/variables";
+@import "../../global/media";
+
+.container {
+  padding: 0 30px 30px 30px;
+}
+.Layout {
+  @include media(">tablet") {
+    display: flex;
+    grid-template-columns: 15vw 85vw;
+  }
+}
+.Layout__children {
+  @include media(">tablet") {
+    padding: 2.5vh 5vw 2.5vh 9vw;
+    display: grid;
+    grid-template-rows: 10vh 37vh 48vh;
+  }
+  // padding: 2.5vh 5vh;
+}
