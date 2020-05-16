@@ -36,8 +36,6 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      svg {
-      }
       @include media("<tablet") {
         svg {
           ellipse {
@@ -63,7 +61,7 @@
       font-family: Poppins, sans-serif;
       letter-spacing: 3px;
       font-weight: 300;
-      margin-bottom: 10vh;
+      margin-bottom: 5vh;
       padding: 0 1rem;
       @include media("<tablet") {
         width: 80%;
@@ -75,13 +73,11 @@
     .LoginPage__content-button {
       display: flex;
       align-items: center;
+      justify-content: center;
       opacity: 0;
       font-size: 4vh;
       font-family: Poppins, sans-serif;
       line-height: 144.5%;
-      position: relative;
-      left: 1vw;
-      top: -5vh;
       cursor: pointer;
       transition: all 0.5s ease;
       @include media("<tablet") {
@@ -98,10 +94,9 @@
       }
       svg {
         // height: 270px;
-        position: relative;
-        left: -1vw;
-        height: 5vh;
-        width: 5vw;
+        height: 4vh;
+        width: 2vw;
+        margin-left: 1px;
         @include media("<tablet") {
           width: 25px;
           height: 3.5vh;

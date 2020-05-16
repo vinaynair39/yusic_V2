@@ -66,7 +66,7 @@ export const PlayBox: React.FC<PlayerProps> = ({
             onClick={() => playerUp(playbox, player)}
           >
             <span>{!!selected && selected.name}</span>
-            {!!!playlist.length && (
+            {!!!selected.name && (
               <span>{"Click on any music or search for any to start!"}</span>
             )}
           </div>

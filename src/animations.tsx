@@ -64,7 +64,7 @@ export const playerUpOnly = (node2: React.RefObject<HTMLDivElement>) => {
 
 export const playerDownOnly = (node2: string) => {
   gsap.to(node2, {
-    duration: 0.5,
+    duration: 0.7,
     y: 500,
     opacity: 0,
     display: "none",
@@ -76,7 +76,7 @@ export const playerDownOnly = (node2: string) => {
   });
 
   gsap.to(".PlayBox__player", {
-    duration: 0.6,
+    duration: 0.7,
     y: 500,
     opacity: 0,
     display: "none",
@@ -87,7 +87,7 @@ export const playerDownOnly = (node2: string) => {
     },
   });
   gsap.to(".PlayBox", {
-    duration: 0.6,
+    duration: 0.7,
     delay: 0.1,
     height: "6vh",
     opacity: 1,

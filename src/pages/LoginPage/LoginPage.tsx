@@ -26,11 +26,10 @@ const LoginPage: React.FC<LoginPageProps> = ({}) => {
 
   useEffect(() => {
     if (width < 1100) {
-      gsap.from(subtitle.current, 2, {
+      gsap.from(subtitle.current, 1.5, {
         opacity: 0,
         y: 50,
         ease: "power4.inOut",
-        stagger: 0.1,
         delay: 1,
       });
     }
@@ -39,12 +38,12 @@ const LoginPage: React.FC<LoginPageProps> = ({}) => {
       overflow: "hidden",
       x: 100,
       ease: "power4.out",
-      delay: 1.5,
+      delay: 1.3,
     });
     gsap.to([button.current], 0.5, {
       opacity: 1,
       ease: "power4.inOut",
-      delay: 2.2,
+      delay: 2,
     });
   }, []);
   return (
