@@ -74,6 +74,18 @@ export const musicReducer = (
         ...state,
         playlist: [action.music, ...playlist],
       };
+
+    case "SET_IN_PLAYLIST": {
+      return {
+        ...state,
+        playlist: state.playlist.map((music) => {
+          if (music.id === action.music.id) {
+            return action.music;
+          }
+          return music;
+        }),
+      };
+    }
     case "REMOVE_MUSIC":
       const index = state.playlist.findIndex(
         (music: PlaylistItem) => music.id === action.id

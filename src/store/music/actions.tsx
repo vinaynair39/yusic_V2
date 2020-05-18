@@ -43,6 +43,12 @@ export const addMusicInPlayList = (music: PlaylistItem) =>
     music,
   } as const);
 
+export const setMusicInPlayList = (music: PlaylistItem) =>
+  ({
+    type: "SET_IN_PLAYLIST",
+    music,
+  } as const);
+
 export const removeMusic = (id: string) =>
   ({
     type: "REMOVE_MUSIC",
@@ -203,6 +209,36 @@ export const getMusicUrl = (music: Music) => {
     );
     dispatch(
       startAddMusic({
+        ...music,
+        liked: false,
+        musicUrl: url,
+      })
+    );
+    dispatch(unloading());
+  };
+};
+
+export const setMusicUrl = (music: Music) => {
+  return async (dispatch: any, getState: () => AppState) => {
+    dispatch(loading());
+    console.log(music);
+    const data = await axios.get(
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${
+        music.name + " " + music.by + " "
+      }audio&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`
+    );
+    console.log(data);
+    const id = data.data.items[0].id.videoId;
+    const url = `https://www.youtube.com/watch?v=${id}`;
+    dispatch(
+      select({
+        ...music,
+        liked: false,
+        musicUrl: url,
+      })
+    );
+    dispatch(
+      setMusicInPlayList({
         ...music,
         liked: false,
         musicUrl: url,

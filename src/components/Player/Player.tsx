@@ -1,4 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
+import ContentLoader from "react-content-loader";
+import ReactPlayer from "react-player";
+import { PlaylistItem, Playlist } from "../../store/music/types";
+import { useDispatch } from "react-redux";
+import {
+  elapsed,
+  nextMusic,
+  setMusicUrl,
+  getVideoUrl,
+} from "../../store/music/actions";
+import Loader from "react-loader-spinner";
+import useWindowSize from "../../useWindowSize";
+
 import { ReactComponent as Play } from "../../assets/play.svg";
 import { ReactComponent as Minus } from "../../assets/minus.svg";
 import { ReactComponent as Plus } from "../../assets/plus.svg";
@@ -6,22 +19,7 @@ import { ReactComponent as MinusD } from "../../assets/minus-desktop.svg";
 import { ReactComponent as PlusD } from "../../assets/plus-desktop.svg";
 import { ReactComponent as Pause } from "../../assets/pause.svg";
 
-import ContentLoader from "react-content-loader";
-
-import ReactPlayer from "react-player";
-
 import "./Player.scss";
-import { PlaylistItem, Playlist } from "../../store/music/types";
-import { useDispatch } from "react-redux";
-import {
-  elapsed,
-  nextMusic,
-  select,
-  getVideoUrl,
-  getMusicUrl,
-} from "../../store/music/actions";
-import Loader from "react-loader-spinner";
-import useWindowSize from "../../useWindowSize";
 
 interface PlayerProps {
   video: boolean;
@@ -59,9 +57,7 @@ const Player: React.FC<PlayerProps> = ({
 
   const index =
     playlist.length > 0 &&
-    playlist.findIndex(
-      (element: PlaylistItem) => element.musicUrl == selected.musicUrl
-    );
+    playlist.findIndex((element: PlaylistItem) => element.id == selected.id);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -90,12 +86,17 @@ const Player: React.FC<PlayerProps> = ({
         }, 1000);
       }
     }
+    if (video) {
+      if (!!selected.musicUrl) {
+        dispatch(getVideoUrl({ ...selected }));
+      }
+    }
   }, [selected.imageUrl]);
 
   useEffect(() => {
     if (!video) {
       if (!!selected.musicUrl) {
-        dispatch(getMusicUrl({ ...selected }));
+        dispatch(setMusicUrl({ ...selected }));
       }
     }
     if (width > 1100 && !video) {

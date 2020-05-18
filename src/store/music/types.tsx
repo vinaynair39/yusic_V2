@@ -7,6 +7,7 @@ import {
   nextMusic,
   removeMusic,
   selectVideo,
+  setMusicInPlayList,
 } from "./actions";
 
 export interface Music {
@@ -46,4 +47,5 @@ export type MusicActionInferred =
   | ReturnType<typeof elapsed>
   | ReturnType<typeof removeMusic>
   | ReturnType<typeof selectVideo>
+  | ReturnType<typeof setMusicInPlayList>
   | ReturnType<typeof nextMusic>;
