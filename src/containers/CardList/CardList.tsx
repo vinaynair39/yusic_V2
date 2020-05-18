@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./CardList.scss";
-import { Musics } from "../../store/music/types";
-import Card from "../../components/Card/Card";
-import { ReactComponent as Right } from "../../assets/right.svg";
-import { ReactComponent as Left } from "../../assets/left.svg";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+
+import Card from "../../components/Card/Card";
+import { Musics } from "../../store/music/types";
 import { getTrending } from "../../store/music/actions";
 import { CardListColumn, CardListRow } from "../../ContentLoader";
-import { useLocation } from "react-router-dom";
-import Reward from "react-rewards";
 import useWindowSize from "../../useWindowSize";
+import { ReactComponent as Right } from "../../assets/right.svg";
+import { ReactComponent as Left } from "../../assets/left.svg";
+
+import "./CardList.scss";
 
 interface CardListProps {
   trending: Musics;

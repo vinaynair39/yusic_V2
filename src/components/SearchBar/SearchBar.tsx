@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
 
-import "./SearchBar.scss";
 import { Musics } from "../../store/music/types";
 import { ReactComponent as Search } from "../../assets/searchbar.svg";
-import gsap from "gsap";
+
+import "./SearchBar.scss";
 
 interface SearchBarProps {
   state?: Musics;

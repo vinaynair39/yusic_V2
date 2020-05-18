@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "./DesktopHeader.scss";
+import { useSelector, useDispatch } from "react-redux";
+import Axios from "axios";
+
 import SearchBar from "../SearchBar/SearchBar";
 import { Musics } from "../../store/music/types";
-import { useSelector, useDispatch } from "react-redux";
 import { loading, unloading, startLogout } from "../../store/auth/actions";
-import Axios from "axios";
 import MyModal from "../MyModal/MyModal";
 import CardList from "../../containers/CardList/CardList";
+
+import "./DesktopHeader.scss";
 
 interface DesktopHeaderProps {}
 

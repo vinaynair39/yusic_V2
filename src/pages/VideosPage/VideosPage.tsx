@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
-import Player from "../../components/Player/Player";
-import "./VideosPage.scss";
+import { useSelector } from "react-redux";
+
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import PlayList from "../../containers/PlayList/PlayList";
 import PlayBox from "../../components/PlayerBox/PlayBox";
 import { AppState } from "../../store/configureStore";
-import { useSelector } from "react-redux";
 import Layout from "../../containers/Layout/Layout";
-import { playerUpOnly } from "../../animations";
 import DesktopHeader from "../../components/DesktopHeader/DesktopHeader";
+import Player from "../../components/Player/Player";
+
+import "./VideosPage.scss";
 
 interface VideosPageProps {}
 

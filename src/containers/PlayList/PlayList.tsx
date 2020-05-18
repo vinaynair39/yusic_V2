@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Droppable } from "react-beautiful-dnd";
-import PlayListItem from "../../components/PlayListItem/PlayListItem";
 import { Scrollbars } from "react-custom-scrollbars";
-import { Playlist, PlaylistItem } from "../../store/music/types";
-import { ReactComponent as Empty } from "../../assets/empty.svg";
-import { PlayListRow } from "../../ContentLoader";
-
-import "./PlayList.scss";
 import { useSelector } from "react-redux";
-import { ReactComponent } from "*.svg";
+
+import PlayListItem from "../../components/PlayListItem/PlayListItem";
+import { Playlist, PlaylistItem } from "../../store/music/types";
+import { PlayListRow } from "../../ContentLoader";
 import { AppState } from "../../store/configureStore";
 import useWindowSize from "../../useWindowSize";
 import { playerDownOnly } from "../../animations";
+import { ReactComponent as Empty } from "../../assets/empty.svg";
+
+import "./PlayList.scss";
 
 interface PlayListProps {
   playlist: Playlist;

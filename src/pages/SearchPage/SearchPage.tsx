@@ -1,19 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { DropResult } from "react-beautiful-dnd";
+import axios from "axios";
+
 import Layout from "../../containers/Layout/Layout";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import "./SearchPage.scss";
-
-import { startLogout, loading, unloading } from "../../store/auth/actions";
+import { loading, unloading } from "../../store/auth/actions";
 import { Musics } from "../../store/music/types";
 import CardList from "../../containers/CardList/CardList";
-import { ReactComponent as Empty } from "../../assets/music2.svg";
 import { AppState } from "../../store/configureStore";
 import PlayBox from "../../components/PlayerBox/PlayBox";
-import { DropResult } from "react-beautiful-dnd";
+import { ReactComponent as Empty } from "../../assets/music2.svg";
 
-// import './SearchPage.scss'
+import "./SearchPage.scss";
 
 interface SearchPageProps {}
 

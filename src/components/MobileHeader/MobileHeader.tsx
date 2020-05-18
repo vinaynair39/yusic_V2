@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { startLogout } from "../../store/auth/actions";
+import { useDispatch } from "react-redux";
 
+import { startLogout } from "../../store/auth/actions";
 import { ReactComponent as Logout } from "../../assets/logout.svg";
 import { ReactComponent as Logo } from "../../assets/Yusic.svg";
 
 import "./MobileHeader.scss";
-import { useDispatch } from "react-redux";
 
 export const MobileHeader: React.FC = ({}) => {
   const dispatch = useDispatch();

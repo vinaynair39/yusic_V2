@@ -1,9 +1,11 @@
 import React from "react";
-import "./MobileNav.scss";
+import { Link, useLocation } from "react-router-dom";
+
 import { ReactComponent as Dashboard } from "../../assets/home.svg";
 import { ReactComponent as Search } from "../../assets/search.svg";
 import { ReactComponent as Video } from "../../assets/video.svg";
-import { Link, useLocation } from "react-router-dom";
+
+import "./MobileNav.scss";
 
 interface MobileNavProps {}
 

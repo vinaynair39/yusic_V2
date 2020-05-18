@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-import { ReactComponent as Logo } from "../../assets/logo-desktop.svg";
+import React, { useEffect, useRef } from "react";
 import Lottie from "lottie-web";
-import * as animationData from "../../speaker.json";
+import gsap from "gsap";
+
+import { ReactComponent as Logo } from "../../assets/logo-desktop.svg";
 
 import "./Loader.scss";
-import gsap from "gsap";
 
 interface LoaderProps {}
 

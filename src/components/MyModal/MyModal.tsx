@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Modal from "react-modal";
-import { ReactComponent as LoadMore } from "../../assets/Load more.svg";
-import "./MyModal.scss";
 import { useSelector } from "react-redux";
+import Modal from "react-modal";
+
+import { ReactComponent as LoadMore } from "../../assets/Load more.svg";
+
+import "./MyModal.scss";
 
 Modal.defaultStyles.overlay!.backgroundColor = "rgba(0, 0, 0, 0.7)";
 

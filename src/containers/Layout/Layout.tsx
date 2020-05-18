@@ -1,12 +1,13 @@
 import React from "react";
-import "./Layout.scss";
+import { useSelector } from "react-redux";
+
 import MobileNav from "../../components/MobileNav/MobileNav";
 import MobileHeader from "../../components/MobileHeader/MobileHeader";
-import windowSize, { WindowSizeProps } from "react-window-size";
 import SideBar from "../../components/SideBar/SideBar";
-import { useSelector } from "react-redux";
 import { AppState } from "../../store/configureStore";
 import useWindowSize from "../../useWindowSize";
+
+import "./Layout.scss";
 
 interface LayoutProps {}
 
@@ -28,4 +29,4 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
-export default windowSize(Layout);
+export default Layout;

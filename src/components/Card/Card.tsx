@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import "./Card.scss";
-import { getMusicUrl } from "../../store/music/actions";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { CardRow, CardColumn } from "../../ContentLoader";
+
+import { getMusicUrl } from "../../store/music/actions";
+import { CardRow } from "../../ContentLoader";
 import useWindowSize from "../../useWindowSize";
+
+import "./Card.scss";
 
 interface CardProps {
   imageUrl: string;

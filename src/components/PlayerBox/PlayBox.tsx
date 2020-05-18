@@ -1,9 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-import "./PlayBox.scss";
-import { ReactComponent as Play } from "../../assets/playbox-play.svg";
-import { ReactComponent as Pause } from "../../assets/pause.svg";
-
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
+
 import PlayList from "../../containers/PlayList/PlayList";
 import { Playlist, PlaylistItem } from "../../store/music/types";
 import Player from "../Player/Player";
@@ -13,6 +10,11 @@ import {
   playerUpOnly,
   playerUpOnlyFade,
 } from "../../animations";
+import { ReactComponent as Play } from "../../assets/playbox-play.svg";
+import { ReactComponent as Pause } from "../../assets/pause.svg";
+
+import "./PlayBox.scss";
+
 interface PlayerProps {
   onDragEnd: (result: DropResult) => void;
   selected: PlaylistItem;

@@ -1,9 +1,10 @@
 import React from "react";
-import "./SideBar.scss";
 import { useLocation, Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/logo-desktop.svg";
 import { ReactComponent as Home } from "../../assets/home-desktop.svg";
 import { ReactComponent as Video } from "../../assets/video-desktoo.svg";
+
+import "./SideBar.scss";
 
 interface SideBarProps {
   name: string;

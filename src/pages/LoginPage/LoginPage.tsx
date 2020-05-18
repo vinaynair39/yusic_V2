@@ -1,19 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { startLogin } from "../../store/auth/actions";
 import { useDispatch } from "react-redux";
-import BG1 from "../../assets/bg3.png";
+import gsap from "gsap";
+
+import useWindowSize from "../../useWindowSize";
 import BG2 from "../../assets/bg2.png";
 import { ReactComponent as Bg } from "../../assets/bg.svg";
-import "./LoginPage.scss";
 import { ReactComponent as Logo } from "../../assets/logo-landing.svg";
 import { ReactComponent as Circles } from "../../assets/circles.svg";
-import hoverEffect from "hover-effect";
-import useWindowSize from "../../useWindowSize";
 import { ReactComponent as Google } from "../../assets/google.svg";
 import { ReactComponent as Edge } from "../../assets/edge.svg";
 import { ReactComponent as Edge2 } from "../../assets/edge2.svg";
-import FadeIn from "react-fade-in";
-import gsap from "gsap";
+
+import "./LoginPage.scss";
 
 interface LoginPageProps {}
 

@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./PlayListItem.scss";
+import React, { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 import { Draggable } from "react-beautiful-dnd";
-import { useDispatch, useSelector } from "react-redux";
+
 import { select, setRemoveMusic, getVideoUrl } from "../../store/music/actions";
-import { ReactComponent as Cross } from "../../assets/cross.svg";
 import { PlaylistItem } from "../../store/music/types";
 import useWindowSize from "../../useWindowSize";
-// import { formatPlaybackTime } from "../Player/Player";
+import { ReactComponent as Cross } from "../../assets/cross.svg";
+
+import "./PlayListItem.scss";
 
 interface PlayListItemProps {
   imageUrl: string;
