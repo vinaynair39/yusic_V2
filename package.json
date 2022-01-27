@@ -44,7 +44,7 @@
     "react-window-size": "^1.2.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "three": "^0.116.1",
+    "three": "^0.137.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
